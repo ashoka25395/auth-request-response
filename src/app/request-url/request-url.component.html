@@ -1,0 +1,17 @@
+<form class="form-horizontal" [formGroup]="myForm">
+
+  <div class="form-group">
+    <div class="col-sm-12">
+      <label for="url" class="control-label">URL</label>
+      <input type="text" id="url" class="form-control" formControlName="url">
+    </div>
+    <div *ngIf="submitted && myForm.invalid " class="alert alert-danger" role="alert">URL must be a valid one...</div>
+  </div>
+  <div class="form-group">
+    <div class="alert alert-danger" role="alert" *ngIf="isError">
+      {{ errorMessage }}
+    </div>
+  </div>
+  <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+
+</form>
